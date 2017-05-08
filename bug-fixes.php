@@ -15,4 +15,12 @@ function maskice_empty_cart_fix() {
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'maskice_empty_cart_fix' );
 
+function maskice_kucni_required ($fields) {
+
+	$fields['billing']['billing_address_2']['required'] = true;
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'maskice_kucni_required' );
+
 ?>
