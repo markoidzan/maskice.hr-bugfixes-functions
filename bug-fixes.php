@@ -3,7 +3,7 @@
 Plugin Name: maskice.hr WooCommerce Bug Fixes and Improvements
 Plugin URI: https://github.com/markoidzan
 Description: For private usage
-Version: 1.0
+Version: 1.1
 Author: Marko Idžan
 Author URI: https://idzan.com.hr
 */
