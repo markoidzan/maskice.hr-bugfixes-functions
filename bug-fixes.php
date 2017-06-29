@@ -15,6 +15,8 @@ function maskice_empty_cart_fix() {
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'maskice_empty_cart_fix' );
 
+/*
+
 function maskice_kucni_required ($fields) {
 
 	$fields['billing']['billing_address_2']['required'] = true;
@@ -23,4 +25,12 @@ function maskice_kucni_required ($fields) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'maskice_kucni_required' );
 
+
+
+function maskice_woogoogad_billing_address_not_found_label_filter($label)
+{
+	return 'Adresa nije pronađena?';
+}
+add_filter('woogoogad_billing_address_not_found_label_filter', 'maskice_woogoogad_billing_address_not_found_label_filter');
+*/
 ?>
