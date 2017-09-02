@@ -15,6 +15,17 @@ function maskice_empty_cart_fix() {
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'maskice_empty_cart_fix' );
 
+
+/* 
+ * Remove jquery migrate for enhanced performance
+ */
+function remove_jquery_migrate_maskice($scripts) {
+   if ( is_admin() ) return;
+   $scripts->remove( 'jquery' );
+   $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+}
+add_action( 'wp_default_scripts', 'remove_jquery_migrate_maskice' );
+
 /*
 
 function maskice_kucni_required ($fields) {
