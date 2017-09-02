@@ -3,7 +3,7 @@
 Plugin Name: maskice.hr WooCommerce Bug Fixes and Improvements
 Plugin URI: https://github.com/markoidzan
 Description: For private usage
-Version: 1.1
+Version: 1.2
 Author: Marko Idžan
 Author URI: https://idzan.com.hr
 */
@@ -25,6 +25,22 @@ function remove_jquery_migrate_maskice($scripts) {
    $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
 }
 add_action( 'wp_default_scripts', 'remove_jquery_migrate_maskice' );
+
+function maskice_remove_query_strings( $src ) {
+  if( strpos( $src, '?ver=' ) )
+    $src = remove_query_arg( 'ver', $src );
+    return $src;
+  }
+add_filter( 'style_loader_src', 'maskice_remove_query_strings', 10, 2 );
+add_filter( 'script_loader_src', 'maskice_remove_query_strings', 10, 2 );
+
+
+function maskice_remove_script_version( $src ){
+  $parts = explode( '?ver', $src );
+  return $parts[0];
+}
+add_filter( 'script_loader_src', 'maskice_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'maskice_remove_script_version', 15, 1 );
 
 /*
 
