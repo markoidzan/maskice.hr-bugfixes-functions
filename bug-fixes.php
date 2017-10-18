@@ -6,6 +6,8 @@ Description: For private usage
 Version: 1.2
 Author: Marko Idžan
 Author URI: https://idzan.com.hr
+WC requires at least: 3.0.0
+WC tested up to: 3.2.0
 */
 
 
