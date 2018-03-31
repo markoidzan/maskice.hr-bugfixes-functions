@@ -3,11 +3,11 @@
 Plugin Name: maskice.hr WooCommerce Bug Fixes and Improvements
 Plugin URI: https://github.com/markoidzan
 Description: For private usage
-Version: 1.2
+Version: 1.3
 Author: Marko Idžan
 Author URI: https://idzan.com.hr
 WC requires at least: 3.0.0
-WC tested up to: 3.2.0
+WC tested up to: 3.3.4
 */
 
 
@@ -43,6 +43,9 @@ function maskice_remove_script_version( $src ){
 }
 add_filter( 'script_loader_src', 'maskice_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'maskice_remove_script_version', 15, 1 );
+
+add_filter( 'wc_product_has_unique_sku', '__return_false' ); 
+
 
 /*
 
